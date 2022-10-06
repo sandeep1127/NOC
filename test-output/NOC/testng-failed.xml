@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [NOC]">
+  <listeners>
+    <listener class-name="WebApp.NOC.Utility.FailedTestCases"/>
+    <listener class-name="WebApp.NOC.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test verbose="5" name="NOCTestCases">
+    <classes>
+      <class name="WebApp.NOC.testcases.LoginPageTestCases"/>
+      <class name="WebApp.NOC.BaseClass.WebBase"/>
+    </classes>
+  </test> <!-- NOCTestCases -->
+</suite> <!-- Failed suite [NOC] -->

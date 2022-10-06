@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="NOC" duration-ms="11600" started-at="2022-09-30T20:07:37Z" finished-at="2022-09-30T20:07:49Z">
+    <groups>
+    </groups>
+    <test name="NOCTestCases" duration-ms="11600" started-at="2022-09-30T20:07:37Z" finished-at="2022-09-30T20:07:49Z">
+      <class name="WebApp.NOC.testcases.LoginPageTestCases">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:WebApp.NOC.testcases.LoginPageTestCases@42dafa95]" name="setUp" is-config="true" duration-ms="9738" started-at="2022-10-01T01:37:37Z" finished-at="2022-10-01T01:37:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:WebApp.NOC.testcases.LoginPageTestCases@42dafa95]" name="validLoginTest" duration-ms="1145" started-at="2022-10-01T01:37:47Z" finished-at="2022-10-01T01:37:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:WebApp.NOC.testcases.LoginPageTestCases@42dafa95]" name="tearDown" is-config="true" duration-ms="697" started-at="2022-10-01T01:37:48Z" finished-at="2022-10-01T01:37:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- WebApp.NOC.testcases.LoginPageTestCases -->
+    </test> <!-- NOCTestCases -->
+  </suite> <!-- NOC -->
+</testng-results>
