@@ -41,13 +41,27 @@ public class CommonMethods extends WebBase{
 		js.executeScript("arguments[0].scrollIntoView(true)", webElementXpath); 
 		Thread.sleep(500); 
 		webElementXpath.click();
+	}
 		
-		
+	// METHOD >> To click a Web element using  Java Script Executor:-
+	public static void clickElementUsingJS(WebElement webElementXpath, WebDriver driver) throws InterruptedException{
+			js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", webElementXpath); 
+			
+	}
+	
+	// METHOD >> Using type your desired text/value in some Element using JavaSCriptExecutor:-
+	public static void sendKeysUsingJSE(WebDriver driver,WebElement webElementXpath , String value ) throws InterruptedException{
+		js = (JavascriptExecutor) driver; 
+		//js.executeScript("arguments[0].value='value'",webElementXpath);             // THIS METHOD IS NOT WORKING, String Parameter passed in method also not being used in body. TAKE HELP from SOMEONE
+		js.executeScript("arguments[0].value= arguments[1];",webElementXpath,value);     // THIS SHOULD WORK
+	
 	}
 	
 	
-	//METHOD >> To Explicitly Wait for any Web Element for SEND KEYS
 	
+	
+	//METHOD >> To Explicitly Wait for any Web Element for SEND KEYS
 	
 	public static void sendkeys(WebDriver driver , WebElement element, int timeout, String value){
 		new WebDriverWait(driver,timeout).until(ExpectedConditions.visibilityOf(element));

@@ -14,9 +14,10 @@
                                                                     
    <!-- 
    IMPORTANT NOTES Below:-
-   Instead of creating Config.properties file ,we could have also done same job by using <Parameter> tag inside <Test>tag in here(testNG.xml). 
-   Step 1:  In TestNG.xml, at <test> level , add <Parameter> tag  and give 'name' and 'value' whih are required.
-   Step 2: Now on top of @test
+   Instead of creating Config.properties file ,we could have also done the same job by using <Parameter> tag inside <Test>tag in this file here(i.e testNG.xml). 
+   Step 1:  In TestNG.xml, at <test> level , add <Parameter> tag  and give 'name' and 'value' which are required.
+   Step 2: Just below @test,use annotation @Parameters
+   step 3: Add the same parameters while creating any method where you wanna use 'url & browser' or any other parameters created in xml.
    Eg:-
    <parameter name="url" value ="https//www.noc-test.com/"/>
    <parameter name="browser" value ="chrome"/>
@@ -32,7 +33,8 @@
    
    
     <classes>
-    <class name="WebApp.NOC.testcases.LoginPageTestCases"/>  <!-- Here add all the classes of test/java which you want testNG to run via xml -->
+    <class name="WebApp.NOC.testcases.LoginPageTestCases"/>  <!-- Here add all the classes of "src/test/java" which you want testNG to run via xml -->
+    <class name="WebApp.NOC.testcases.HomePageTestCases"/>
       <class name="WebApp.NOC.BaseClass.WebBase"/>
     </classes>
   </test> <!-- Test -->

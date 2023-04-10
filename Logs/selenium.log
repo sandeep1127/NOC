@@ -1,14 +1,4 @@
-19:09:55,280  INFO devpinoyLogger:55 - Chrome browser opened
-19:09:55,424  INFO devpinoyLogger:91 - browser is maximised
-19:09:55,441  INFO devpinoyLogger:93 - cookies cleared
-19:10:06,195  INFO devpinoyLogger:98 - https://noc-dev.smartac.com/ app opened
-19:10:07,756 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
-19:10:07,757 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
-19:10:07,758 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-19:10:07,759 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-19:10:07,759 DEBUG cache:45 - Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/schoudhary/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-19:10:07,888 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
-19:10:07,888 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
-19:10:07,888 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-19:10:07,888 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-19:10:07,888 DEBUG cache:45 - Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/C:/Users/schoudhary/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+23:06:05,976  INFO devpinoyLogger:54 - Chrome browser opened
+23:06:06,155  INFO devpinoyLogger:90 - browser is maximised
+23:06:06,174  INFO devpinoyLogger:92 - cookies cleared
+23:06:11,534  INFO devpinoyLogger:97 - https://noc-dev.smartac.com/ app opened

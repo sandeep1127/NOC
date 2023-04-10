@@ -28,17 +28,16 @@ public class WebBase {
 	public static Properties config;     // 
 	
 	
-	public static Logger log;                        // creating variable to be used for log4j API for creating manual logs
-	public static EventFiringWebDriver e_driver;    // Creating variable to be used for WebFiringDriver for creating console Logs automatically
-	public static WebEventListener eventListener;   // Creating variable to be used for WebEventListener for creating console Logs automatically
+	public static Logger log;                       // variable to be used for log4j API for creating manual logs
+	public static EventFiringWebDriver e_driver;    // variable to be used for WebFiringDriver for creating console Logs automatically
+	public static WebEventListener eventListener;   // variable to be used for WebEventListener for creating console Logs automatically
 	
 	
 	public WebBase() throws IOException{ // initializing 'Properties' file in the Constructor of the BASE CLASS
 		config = new Properties();      // initializing the object ( import Properties class from java.util )
 		File file = new File("E:\\SandeepJavaWorkspace\\NOC\\Configuration\\config.properties");               // Storing our 'properties' file created into a File object.
 		FileInputStream fis = new FileInputStream(file);                                                        // Converting 'properties' file into File Stream
-		config.load(fis);	 
-		
+		config.load(fis);	 	
 	}
 		
 	
@@ -77,7 +76,7 @@ public class WebBase {
 			}
 	
 	
-		 // Step 2 : Below code is a part for generating logs which will be used by WebEventListner class available in Util Package. (step 1 was to create class "WebEventListener")
+		// Step 2 : Below code is a part for generating logs which will be used by WebEventListner class available in Util Package. (step 1 was to create class "WebEventListener")
 		     e_driver = new EventFiringWebDriver(driver);
 		
 		// step 3 : Now create object of 'WebEventListener' class which u created in step 1 to register it with EventFiringWebDriver.
@@ -92,7 +91,7 @@ public class WebBase {
 		driver.manage().deleteAllCookies();
 		log.info("cookies cleared");
 		driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
 		driver.get(config.getProperty("url"));
 		log.info(config.getProperty("url") + " app opened");

@@ -5,10 +5,22 @@
     <listener class-name="WebApp.NOC.Utility.FailedTestCases"/>
     <listener class-name="WebApp.NOC.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
-  <test verbose="5" name="NOCTestCases">
+  <test thread-count="1" verbose="5" name="NOCTestCases" parallel="classes">
     <classes>
       <class name="WebApp.NOC.testcases.LoginPageTestCases"/>
       <class name="WebApp.NOC.BaseClass.WebBase"/>
     </classes>
   </test> <!-- NOCTestCases -->
+  <test name="NOCTestCases(failed)" parallel="classes">
+    <classes>
+      <class name="WebApp.NOC.testcases.LoginPageTestCases">
+        <methods>
+          <include name="setUp"/>
+          <include name="invalidEmailLoginTest"/>
+          <include name="invalidPasswordLoginTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- WebApp.NOC.testcases.LoginPageTestCases -->
+    </classes>
+  </test> <!-- NOCTestCases(failed) -->
 </suite> <!-- Failed suite [NOC] -->
