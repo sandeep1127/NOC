@@ -1,6 +1,7 @@
 package WebApp.NOC.Pages;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -49,7 +50,7 @@ public class LoginPage extends WebBase {
 	  public WebElement wrongEmailAddressText;
 	
 	
-	
+	// Objects declarations:-
 	public Actions action;
 	public CommonMethods common;
 	public WebDriverWait wait;
@@ -57,8 +58,9 @@ public class LoginPage extends WebBase {
 	
    public LoginPage() throws IOException{               // constructor of Class where we are initializing Page objects	
 		//this.driver=driver;
-		PageFactory.initElements(driver, this);        // 'this' means initializing current class objects with driver of base class i.e @FindBy ones.Instead of 'this' You can also write  'LoginPage.class'
-		wait =new WebDriverWait (driver, 120);        // creating explicit wait object
+	   PageFactory.initElements(driver, this);        // 'this' means initializing current class objects with driver of base class i.e @FindBy ones.Instead of 'this' you can also write  'LoginPage.class'
+		//wait =new WebDriverWait (driver, 90);        // creating explicit wait object [This is SELENIUM 3 code]			
+		wait =new WebDriverWait (driver, Duration.ofSeconds(90));  // THIS IS SELENIUM 4 code for EXPLICIT WAIT. ABove this in line 62 was SELENIUM 3 code for same 
 		
 	}
 	
@@ -90,6 +92,10 @@ public class LoginPage extends WebBase {
 		
 		return new HomePage();
 	}
+	
+	
+		
+		
 	
 	
 	public boolean invalidEmailLogin(String pwd){

@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -61,7 +62,8 @@ public class HomePage extends WebBase {
 	// initializing Page objects/WebElements in the Constructor of Page Class
 		public HomePage() throws IOException {
 			PageFactory.initElements(driver,this); 
-			wait =new WebDriverWait (driver, 60);    // using explicit wait & instantiating it in Constructor itself.
+			//wait =new WebDriverWait (driver, 90);        // creating explicit wait object [This is SELENIUM 3 code]			
+			wait =new WebDriverWait (driver, Duration.ofSeconds(90));  // THIS IS SELENIUM 4 code for EXPLICIT WAIT. ABove this in line 62 was SELENIUM 3 code for same 
 		}
 		
 		
@@ -116,11 +118,22 @@ public class HomePage extends WebBase {
 				Thread.sleep(2000);
 				//Select select =new Select(alertDropDown);   // Can't use SELECT class as alert dropdown is not using SELECT Tag. So have to use BOOTSTRAP
 				
-				WebElement alertDropDown1 = driver.findElement(By.xpath("//div[@class='sac-arrow-container']//*[name()='svg']"));	
+				//WebElement alertDropDown1 = driver.findElement(By.xpath("//div[@class='sac-arrow-container']//*[name()='svg']"));	
+				WebElement alertDropDown1 = driver.findElement(By.cssSelector("div.sac-dropdown.cs-createAlertType"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 					js.executeScript("arguments[0].click();", alertDropDown1);            // Explain : Element takes the place of "arguments[0]" when its run
 				
-				Thread.sleep(7000);
+					
+					Actions action = new Actions(driver); 
+				     action.moveToElement(driver.findElement(By.cssSelector("div.sac-option:nth-child(3)>span"))).click().perform();
+				     
+				     action.moveToElement(driver.findElement(By.cssSelector("button.ca-button"))).click().perform();
+				     System.out.println("Element is clicked");
+				     //WebElement createAlertBtn = driver.findElement(By.cssSelector("button.ca-button"));
+				     
+						//js.executeScript("arguments[0].click();", createAlertBtn);
+							
+				Thread.sleep(40000);
 				
 			}                                                                   
 		

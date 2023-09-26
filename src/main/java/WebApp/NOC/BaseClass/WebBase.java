@@ -20,7 +20,7 @@ import org.testng.annotations.AfterMethod;
 
 import WebApp.NOC.Utility.WebEventListener;
 import WebApp.NOC.Utility.Xls_Reader;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class WebBase {
 
@@ -46,34 +46,34 @@ public class WebBase {
         
 		
 		
-		if(config.getProperty("browser").equalsIgnoreCase("chrome")) {                                           // opening of desired browser from config env.properties file .
-		//System.setProperty("webdriver.chrome.driver", "E:\\SandeepJavaWorkspace\\Salesarchitect\\Drivers\\chromedriver.exe");
-		WebDriverManager.chromedriver().setup();            // Instead of above line where we need to always keep updating the driver manually, by using this class(after adding its dependency) we don't need to update driver now.
-			
-			driver = new ChromeDriver();
-			log.info("Chrome browser opened");
-			
-		} 
-			else if(config.getProperty("browser").equalsIgnoreCase("firefox"))  {
-				//System.setProperty("webdriver.gecko.driver", "E:\\SandeepJavaWorkspace\\Salesarchitect\\Drivers\\geckodriver.exe");
-				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
-				log.info("Firefox browser opened");
-			}
-		
-			else if(config.getProperty("browser").equalsIgnoreCase("ie"))  {   
-				//System.setProperty("webdriver.ie.driver", "E:\\SandeepJavaWorkspace\\Salesarchitect\\Drivers\\IEDriverServer.exe");
-				WebDriverManager.iedriver().setup();
-				driver = new InternetExplorerDriver();
-				log.info("IE browser opened");
-			}
-		
-			else if(config.getProperty("browser").equalsIgnoreCase("edge"))  {   
-				//System.setProperty("webdriver.edge.driver", "E:\\SandeepJavaWorkspace\\Salesarchitect\\Drivers\\msedgedriver.exe");
-				WebDriverManager.edgedriver().setup();
-				driver = new EdgeDriver();
-				log.info("Edge browser opened");
-			}
+        if(config.getProperty("browser").equalsIgnoreCase("chrome")) {                                           // opening of desired browser from config env.properties file .
+    		//System.setProperty("webdriver.chrome.driver", "E:\\SandeepJavaWorkspace\\Salesarchitect\\Drivers\\chromedriver.exe");
+    		//WebDriverManager.chromedriver().setup();           // Instead of above line where we need to always keep updating the driver manually, by using this class(after adding its dependency) we don't need to update driver now.
+    			
+    			driver = new ChromeDriver();
+    			log.info("Chrome browser opened");
+    			
+    		} 
+    			else if(config.getProperty("browser").equalsIgnoreCase("firefox"))  {
+    				//System.setProperty("webdriver.gecko.driver", "E:\\SandeepJavaWorkspace\\Salesarchitect\\Drivers\\geckodriver.exe");
+    				//WebDriverManager.firefoxdriver().setup();
+    				driver = new FirefoxDriver();
+    				log.info("Firefox browser opened");
+    			}
+    		
+    			else if(config.getProperty("browser").equalsIgnoreCase("ie"))  {   
+    				//System.setProperty("webdriver.ie.driver", "E:\\SandeepJavaWorkspace\\Salesarchitect\\Drivers\\IEDriverServer.exe");
+    				//WebDriverManager.iedriver().setup();
+    				driver = new InternetExplorerDriver();
+    				log.info("IE browser opened");
+    			}
+    		
+    			else if(config.getProperty("browser").equalsIgnoreCase("edge"))  {   
+    				//System.setProperty("webdriver.edge.driver", "E:\\SandeepJavaWorkspace\\Salesarchitect\\Drivers\\msedgedriver.exe");
+    				//WebDriverManager.edgedriver().setup();
+    				driver = new EdgeDriver();
+    				log.info("Edge browser opened");
+    			}
 	
 	
 		// Step 2 : Below code is a part for generating logs which will be used by WebEventListner class available in Util Package. (step 1 was to create class "WebEventListener")

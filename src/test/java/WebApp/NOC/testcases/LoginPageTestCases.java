@@ -47,7 +47,7 @@ public class LoginPageTestCases extends WebBase {
 		
 		
 		 
-		// Step 4 : Creating Test Cases
+		// Step 4 : Creating Test Cases:-
 		
 		@Test(priority=1)
 		public void verifyLoginPageTitleTest(){
@@ -78,7 +78,7 @@ public class LoginPageTestCases extends WebBase {
 		
 		@Test(priority=5)
 		public void verifyForgotPasswordErrorMsgTest(){
-			SoftAssert softAssert1 = new SoftAssert();   // Creating SoftAssert Object at each Test case level (We did not create Single Object at Global level because in that case in all test cases results of all cases will be shown so better to create a new Object in each class).(Always use method "softAssert.assertAll(); in each Test Case for SoftAssert to work)
+			SoftAssert softAssert1 = new SoftAssert();   // will have to create 'SoftAssert' class Object at each Test case level (We did not create Single Object at Global level because in that case , all test cases results of all cases will be shown so better to create a new Object in each class).(Always use method "softAssert.assertAll(); in each Test Case for SoftAssert to work)
 			
 			softAssert1.assertEquals(loginPage.verifyForgotPasswordErrorMsg(),"There is no user with that id" );
 			softAssert1.assertAll();                      // we always need to add this method if we use SoftAssert, otherwise failed test case also will be shown as Passed.

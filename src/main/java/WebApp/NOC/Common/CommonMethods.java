@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
@@ -63,31 +64,30 @@ public class CommonMethods extends WebBase{
 	
 	//METHOD >> To Explicitly Wait for any Web Element for SEND KEYS
 	
-	public static void sendkeys(WebDriver driver , WebElement element, int timeout, String value){
-		new WebDriverWait(driver,timeout).until(ExpectedConditions.visibilityOf(element));
-		element.sendKeys(value);
-	}
-	
-	//METHOD >> To Explicitly Wait for any Web Element for CLICKING
-	
-	public static void clickOn(WebDriver driver , WebElement element, int timeout){
-		new WebDriverWait(driver,timeout).until(ExpectedConditions.elementToBeClickable(element));
-		element.click();
+		public static void sendkeys(WebDriver driver , WebElement element, Duration timeout, String value){
+			new WebDriverWait(driver,timeout).until(ExpectedConditions.visibilityOf(element));
+			element.sendKeys(value);
+		}
 		
-	}
-	
-	
-	// METHOD : To add current time Stamp
-    public static String addDateTimeStamp(){
+		//METHOD >> To Explicitly Wait for any Web Element for CLICKING
 		
-		SimpleDateFormat df=new SimpleDateFormat("dd_MMM_yyyy_HH_MM_SS");   // Here we created object of SimpleDateFormat Class where we passed our desired date format in which we want the current date with time.
-		Date date=new Date();                                              // Here, object is created to get the current time from our System.
-		String currentTime= df.format(date);								// Here , we are using the method to format/convert the System time into our desired format.
-		return currentTime;
+		public static void clickOn(WebDriver driver , WebElement element, Duration timeout){
+			new WebDriverWait(driver,timeout).until(ExpectedConditions.elementToBeClickable(element));
+			element.click();
+			
+		}
 		
-		// System.out.println(System.currentTimeMillis());   we can also use simply this method directly as well , but it wont give the time in our desired format
-	}
-	
+		
+		// METHOD : To add current time Stamp
+	    public static String addDateTimeStamp(){
+			
+			SimpleDateFormat df=new SimpleDateFormat("dd_MMM_yyyy_HH_MM_SS");   // Here we created object of SimpleDateFormat Class where we passed our desired date format in which we want the current date with time.
+			Date date=new Date();                                              // Here, object is created to get the current time from our System.
+			String currentTime= df.format(date);								// Here , we are using the method to format/convert the System time into our desired format.
+			return currentTime;
+			
+			// System.out.println(System.currentTimeMillis());   we can also use simply this method directly as well , but it wont give the time in our desired format
+		}
  // Method >> To use DataProvider to fetch data from Excel:- ( NAVEEN's CODE)
 	
     public static Object[][] getTestData(String sheetName) {
