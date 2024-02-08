@@ -16,17 +16,17 @@
     <classes>
       <class name="WebApp.NOC.testcases.HomePageTestCases">
         <methods>
-          <include name="CreateUrgentAlertsTest"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- WebApp.NOC.testcases.HomePageTestCases -->
       <class name="WebApp.NOC.testcases.LoginPageTestCases">
         <methods>
+          <include name="setUp"/>
           <include name="validLoginTest"/>
           <include name="invalidEmailLoginTest"/>
-          <include name="verifyForgotPasswordErrorMsgTest"/>
           <include name="invalidPasswordLoginTest"/>
-          <include name="verifyLoginPageTitleTest"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- WebApp.NOC.testcases.LoginPageTestCases -->
     </classes>
